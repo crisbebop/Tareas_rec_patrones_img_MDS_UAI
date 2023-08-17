@@ -7,7 +7,7 @@ Colección de tareas del curso de reconocimiento de patrones en imágenes del MD
     b) Perímetro
     c) Área
     d) Redondez
-    e) Ángulo de orientación de la elipse
+    e) Ángulo de orientación de la elipse  
 
     El programa despliega:
     
