@@ -1,8 +1,8 @@
 # Actividades de Reconociminento de Patrones en Imágenes
 De un set de imágenes de texturas se realizan 3 actividades progresivas para identificar patrones para la clasificación de imágenes.
 
-1. La Actividad 1 consiste en extraer los descriptores de una imagen compuesta por seis letreas (sopa de letras). Las características a encontrar son:
-    - primerso momentos de Hu  
+1. La Actividad 1 consiste en extraer los descriptores de una imagen compuesta por seis letras (sopa de letras). Las características a encontrar son:
+    - 4 primeros momentos de Hu  
     - Perímetro  
     - Área
     - Redondez
