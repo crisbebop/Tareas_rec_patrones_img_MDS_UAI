@@ -1,16 +1,8 @@
-# Actividades de Reconociminento de Patrones en Imágenes
-De un set de imágenes de texturas se realizan 3 actividades progresivas para identificar patrones para la clasificación de imágenes.
+# Clasificación de Patrones de imágenes
+###  (Actividad_3-CL.ipynb)
+El objetivo principal de este estudio es llevar a cabo una comparación exhaustiva de diversos clasificadores supervisados utilizando un conjunto de datos que se centra en texturas. La fuente de las imágenes proviene del proyecto [T1k+: Database for Benchmarking Color Texture Classification and Retrieval Methods](https://www.mdpi.com/1424-8220/21/3/1010). Este conjunto de datos se compone de un total de 10 clases distintas de texturas, y en cada clase, se encuentran 50 imágenes, lo que suma un total de 500 imágenes en el conjunto de datos.
+Para caracterizar estas texturas, se extraen seis descriptores de textura clave: contraste, energía, ASM (Angular Second Moment), homogeneidad, correlación y disimilaridad, de cada imagen. Esta extracción se realiza tanto para los canales de color RGB como        para la representación en escala de grises. Esto ha dado como resultado un conjunto de datos con un total de 24 características para cada imagen.  
 
-1. La Actividad 1 consiste en extraer los descriptores de una imagen compuesta por seis letras (sopa de letras). Las características a encontrar son:
-    - 4 primeros momentos de Hu  
-    - Perímetro  
-    - Área
-    - Redondez
-    - Ángulo de orientación de la elipse
-      
-    El programa despliega:
-    - Una matriz con los descriptores antes señalados
-    - Una imagen que incluye cada letra con su centro de masa
-
-2. La Actividad 2 consiste en encontrar el par de descriptores que maximicen las distancia entre clases (minimizando la distancia intra clase) de un set de imágenes de textura.
-3. La Actividad 3 consiste en encontrar los descriptores que maximicen la distancia entre clases, realizar un feature selection considerando un criterio de información y modelar un clasificador, se selecciona entre varios modelos de acuerdo al F1-score promedio de 30 repeticiones por modelo.
+Para la reducción de la dimensionalidad, se aplica un LDA (_linear discriminant analysis_). El LDA permite identificar las componentes de descriptores que maximizan la distancia entre las clases de texturas.
+En cuanto al proceso de _feature selection_, inicialmente, se utiliza un árbol de decisión para evaluar la importancia de cada característica en el proceso de clasificación. Esto permite identificar las características más relevantes. Posteriormente, se           ejecuta un conjunto de 11 modelos de clasificación diferentes y optimizamos el clasificador que logró el mayor F1-score promedio en base a 30 repeticiones de validación cruzada (Repeated K-Fold).
+Finalmente, se analizan las curvas de aprendizaje de los modelos modelos mejor evaluados y se seleccionó el modelo ajustado más adecuado (accuracy del 97%)
